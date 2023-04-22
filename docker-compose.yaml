@@ -1,0 +1,12 @@
+version:"3"
+services:
+  frontend:
+    image: contact-frontend
+    ports: 
+      - "5173:5173"
+    
+  backend:
+    image: contact-backend
+    ports:
+      - "3000:3000"
+    
