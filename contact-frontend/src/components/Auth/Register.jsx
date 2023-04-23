@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
+const BACKEND_URL =  import.meta.env.VITE_BACKEND_URL;
+
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const [registerData, setRegisterData] = useState({
@@ -27,7 +29,7 @@ const RegistrationForm = () => {
 
     try {
       const data = { ...registerData, confirmPassword: null };
-      const response = await fetch("http://localhost:3001/api/register", {
+      const response = await fetch(`${BACKEND_URL}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

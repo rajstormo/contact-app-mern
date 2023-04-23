@@ -1,7 +1,8 @@
+const BACKEND_URL =  import.meta.env.BACKEND_URL;
 
 const checkUserLoginStatus = async () => {
   try {
-    const response = await fetch("http://localhost:3001/api/login-status", {
+    const response = await fetch(`${BACKEND_URL}/api/login-status`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

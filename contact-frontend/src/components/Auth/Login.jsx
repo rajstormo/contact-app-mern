@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const BACKEND_URL =  import.meta.env.VITE_BACKEND_URL;
+
 const Login = ({ loggedInUser, onLogIn }) => {
   const [loginCredentials, setLoginCredentials] = useState({
     userOrEmail: "",
@@ -17,7 +19,7 @@ const Login = ({ loggedInUser, onLogIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3001/api/login", {
+      const response = await fetch(`${BACKEND_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

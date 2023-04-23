@@ -1,6 +1,10 @@
 
 import cloudinary from 'cloudinary-core';
-import { CLOUD_NAME, PRESET_NAME } from "../../constants"
+// import { CLOUD_NAME, PRESET_NAME } from "../../constants"
+
+const BACKEND_URL =  import.meta.env.VITE_BACKEND_URL;
+const CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME;
+const PRESET_NAME = import.meta.env.VITE_PRESET_NAME;
 
 const cld = new cloudinary.Cloudinary({ cloud_name: CLOUD_NAME });
 
@@ -16,7 +20,7 @@ const checkImageExists = async (publicId) => {
 
 const getAllContacts = async () => {
   try {
-    const response = await fetch("http://localhost:3001/api/getContacts", {
+    const response = await fetch(`${BACKEND_URL}/api/getContacts`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +38,7 @@ const getAllContacts = async () => {
 
 const deleteContact = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/delete-contact/${id}`, {
+    const response = await fetch(`${BACKEND_URL}/api/delete-contact/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -52,7 +56,7 @@ const deleteContact = async (id) => {
 
 const updateContact = async (id, newContact) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/update-contact/${id}`, {
+    const response = await fetch(`${BACKEND_URL}/api/update-contact/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type":"application/json",
@@ -71,7 +75,7 @@ const updateContact = async (id, newContact) => {
 
 const createContact = async (contactDetails) => {
   try {
-    const response = await fetch("http://localhost:3001/api/create-contact", {
+    const response = await fetch(`${BACKEND_URL}/api/create-contact`, {
       method: "POST",
       body: JSON.stringify(contactDetails),
       headers: {
