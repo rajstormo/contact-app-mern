@@ -3,7 +3,7 @@ WORKDIR /contact-frontend
 COPY ./package.json ./
 COPY ./package-lock.json ./
 COPY . .
-ENV VITE_BACKEND_URL=http://13.233.96.180:3000
+ENV VITE_BACKEND_URL=http://65.2.78.150:3000
 ENV VITE_CLOUD_NAME=dzaj6rovc
 ENV VITE_PRESET_NAME=contactApp
 EXPOSE 5173
