@@ -7,6 +7,8 @@ services:
       - "5173:5173"
     depends_on:
       - backend
+    networks:
+      - my-network
     
   backend:
     container_name: backend-container
@@ -14,3 +16,9 @@ services:
     restart: always
     ports:
       - "3000:3000"
+    networks:
+      - my-network
+      
+networks:
+  my-network:
+    driver: bridge
