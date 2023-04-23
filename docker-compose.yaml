@@ -5,8 +5,6 @@ services:
     build: ./contact-frontend
     ports: 
       - "5173:5173"
-    environment:
-      - API_URL=http://43.204.116.23:3000/
     networks:
       - my-network
     
