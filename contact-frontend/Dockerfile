@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18.14.0
 WORKDIR /contact-frontend
 COPY ./package.json ./
 COPY ./package-lock.json ./
