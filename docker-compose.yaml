@@ -2,7 +2,7 @@ version: "3"
 services:
   frontend:
     container_name: client-container
-    build: /contact-frontend
+    build: ./contact-frontend
     ports: 
       - "5173:5173"
     depends_on:
@@ -10,6 +10,6 @@ services:
     
   backend:
     container_name: backend-container
-    build: /contact-backend
+    build: ./contact-backend
     ports:
       - "3000:3000"
