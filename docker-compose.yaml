@@ -5,18 +5,9 @@ services:
     build: ./contact-frontend
     ports: 
       - "5173:5173"
-    networks:
-      - my-network
-    
+      
   backend:
     container_name: backend-container
     build: ./contact-backend
-    restart: always
     ports:
       - "3000:3000"
-    networks:
-      - my-network
-      
-networks:
-  my-network:
-    driver: bridge
