@@ -49,7 +49,7 @@ cd ../backend
 npm install
 ```
 
-4. Create a `.env` file in the `backend` directory and add the following environment variables:
+4. Create a `.env` file in the `contact-backend` directory and add the following environment variables:
 
 ```
 DATABASE_URI=your_mongodb_uri
@@ -59,7 +59,7 @@ PORT=port_no
 
 Replace `your_mongodb_uri` with your MongoDB Cloud connection URI.
 
-5. Create a `.env` file in the `backend` directory and add the following environment variables:
+5. Create a `.env` file in the `contact-frontend` directory and add the following environment variables:
 
 ```
 VITE_BACKEND_URL=backend_url 
