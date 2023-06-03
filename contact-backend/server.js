@@ -16,7 +16,6 @@ const verifyJWT = require("./middleware/verifyJWT");
 
 app.use(cors());
 app.use(express.json());
-
 // connect to database
 connectDB();
 
@@ -30,6 +29,7 @@ app.get("/api/login-status",verifyJWT, (req,res) => {
 });
 
 // for all subsequent request the middleware verifyJWT will be used
+
 app.use(verifyJWT);
 app.use("/api",contact);
 
