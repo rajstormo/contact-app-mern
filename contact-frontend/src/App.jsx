@@ -19,7 +19,9 @@ const App = () => {
   
   // at the start of app -> check whether user is already logged in
   useEffect(() => {
-    checkUserLoginStatus().then((userStatus) => {
+    checkUserLoginStatus()
+    .then((userStatus) => {
+      console.log(userStatus);
       if (userStatus.error) {
         navigate("/login",{replace:true});
         return;
