@@ -9,6 +9,5 @@ services:
   backend:
     container_name: backend-container
     build: ./contact-backend
-    restart: always
     ports:
       - "3000:3000"
