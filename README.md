@@ -77,7 +77,7 @@ cd backend
 npm start
 ```
 
-The server will run on `http://localhost:3000`if port not defined in the .env file
+The server will run on `http://localhost:3000` if port not defined in the .env file
 
 2. Start the frontend development server:
 
@@ -101,3 +101,5 @@ To deploy the app to a production environment, follow the deployment instruction
   - Deploy the backend to a cloud platform such as Render or AWS. Set the `DATABASE_URI` environment variable to the appropriate MongoDB Cloud connection URI in the deployment environment.
 
 Ensure you update the necessary configuration files and environment variables specific to your deployment environment.
+
+- check live on [https://contact-app-frontend.onrender.com/](https://contact-app-frontend.onrender.com/)
